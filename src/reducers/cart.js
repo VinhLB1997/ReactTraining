@@ -1,16 +1,8 @@
 import * as types from '../constants/ActionType'
 
-var initialState = [
-    {
-        product: {
-            id: 1,
-            name: "Samsung Galaxy S10+ 128GB Bạc Đa Sắc",
-            image: "https://cdn.tgdd.vn/Products/Images/42/203207/samsung-galaxy-s10-plus-128gb-bac-da-sac-400x400.jpg",
-            price: 23990000
-        },
-        quantity: 10
-    }
-]
+var data = JSON.parse(localStorage.getItem("cart"));
+
+var initialState = data ? data : []
 
 const cart = (state = initialState, action) => {
     var { product, quantity } = action;
@@ -24,6 +16,7 @@ const cart = (state = initialState, action) => {
             } else {
                 state[index].quantity += quantity;
             }
+            localStorage.setItem("cart", JSON.stringify(state))
             return [...state];
         default: return [...state];
     }

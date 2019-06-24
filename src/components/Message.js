@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Message() {
+export default function Message(props) {
     return (
         <div className="alert alert-success">
-            <strong>Success!</strong> Indicates a successful or positive action.
+            {props.message}
         </div>
     );
 }

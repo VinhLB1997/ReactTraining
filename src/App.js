@@ -2,8 +2,7 @@ import React from 'react';
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ProductsContainer from './containers/ProductsContainer'
-import Message from './components/Message'
-import Cart from './components/Cart'
+import MessageContainer from './containers/MessageContainer'
 import CartContainer from './containers/CartContainer'
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
     <div>
       <Header />
       <ProductsContainer />
-      <Message />
+      <MessageContainer />
       <CartContainer />
       <Footer />
     </div>
